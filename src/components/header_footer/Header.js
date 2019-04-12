@@ -49,10 +49,10 @@ class Header extends Component {
         <Toolbar> 
           <div className="header_logo">
             <div className="font_righteous header_logo_venue">
-              The Venue
+              Pereverziev Andrii
             </div>
             <div className="header_logo_title">
-              Musical Events 
+              Extended CV
             </div>
           </div>
           <IconButton
