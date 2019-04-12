@@ -1,10 +1,23 @@
 import React from 'react';
+import { scroller } from 'react-scroll';
 
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
 const SideDrawer = (props) => {
+ 
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 600,
+      delay: 100,
+      smooth: true,
+      offset: -150
+    });   
+
+    props.onClose(false);
+  }
+
   return (
     <Drawer
       anchor="right" 
@@ -12,11 +25,11 @@ const SideDrawer = (props) => {
       onClose={() => props.onClose(true)}
     >
       <List component="nav">
-        <ListItem button onClick={() => console.log('Feature')}>
+        <ListItem button onClick={() => scrollToElement('highlights')}>
           Event Starts In 
         </ListItem>
-        <ListItem button onClick={() => console.log('Venue NFO')}>
-          Venue NFO
+        <ListItem button onClick={() => scrollToElement('location')}>
+          Location
         </ListItem>
 
       </List>
